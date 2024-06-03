@@ -15,7 +15,7 @@ router.get('/envelopes/:id', getEnvelopeById);
 
 router.post('/envelopes/', addEnvelope);
 
-router.put('/envelopes/', updateEnvelope);
+router.put('/envelopes/:id', updateEnvelope);
 
 router.delete('/envelopes/:id', deleteEnvelope);
 
