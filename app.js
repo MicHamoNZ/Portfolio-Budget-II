@@ -13,11 +13,16 @@ app.use(
     })
 );
 
+const PORT = process.env.PORT || 5001;
+
 app.get('/', (req, res) => {
     res.json({ info: 'node.js, Express, and Postgres API' });
 });
 
-const PORT = process.env.PORT || 5001;
+const envelopesRouter = require('./routes/envelopes');
+const e = require('express');
+app.use(envelopesRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
